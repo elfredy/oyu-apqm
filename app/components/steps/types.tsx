@@ -322,6 +322,18 @@ export interface OpenResponses {
   nextYearPriorities: string; // C
 }
 
+
+export type CertificateCategory = "top" | "medium" | "basic";
+
+export interface CertificateEntry {
+  id: string;
+  field: string;
+  title: string;
+  category: CertificateCategory;
+  year: number;
+  points: number;
+}
+
 // ApqmFormValues içində əlavə et:
 export interface ApqmFormValues {
   personalInfo: PersonalInfo;
@@ -343,4 +355,7 @@ export interface ApqmFormValues {
   artsActivities: ArtsActivityEntry[];
   artsAwards: ArtsAwardEntry[];
   openResponses: OpenResponses;
+  certificates: CertificateEntry[];
+
 }
+

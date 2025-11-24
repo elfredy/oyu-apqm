@@ -21,6 +21,7 @@ import { AcademicPositionsStep } from "./components/steps/AcademicPositionsStep"
 import { ArtsActivityStep } from "./components/steps/ArtsActivityStep";
 import { ArtsAwardsStep } from "./components/steps/ArtsAwardsStep";
 import { OpenQuestionsStep } from "./components/steps/OpenQuestionsStep";
+import {CertificatesStep} from './components/steps/CertificatesStep'
 
 import { ApqmFormValues } from "./components/steps/types";
 import { db } from "./lib/firebase";
@@ -43,8 +44,9 @@ const STEPS = [
   "Akademik və idarəetmə vəzifələri", //13
   "Sənətşünaslıq fəaliyyəti", //14
   "Sənətşünaslıq mükafatı", //15
-  "Açıq suallar", //16
-  "Yekun", //17
+  "Açıq Suallar ", //16
+  "Sertifikatlar", //17
+  "Yekun", //18
 ];
 
 // Hər step üçün hansı sahələri validate edək?
@@ -225,6 +227,8 @@ export default function HomePage() {
         {currentStep === 14 && <ArtsActivityStep form={form} />}
         {currentStep === 15 && <ArtsAwardsStep form={form} />}
         {currentStep === 16 && <OpenQuestionsStep form={form} />}
+        {currentStep === 17 && <CertificatesStep form={form} />}
+
 
         {currentStep === STEPS.length - 1 && (
           <div className="space-y-4">
