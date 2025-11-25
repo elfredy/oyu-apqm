@@ -100,7 +100,10 @@ export function AwardsStep({
                   Yerli qurumlarda “Ən yaxşı məqalə” (3 bal)
                 </option>
                 <option value="outstanding_researcher">
-                  OYU “Outstanding researcher” mükafatı (5 bal)
+                  OYU Görkəmli Elmi tədqiqatçı diplomu mükafatı (5 bal)
+                </option>
+                <option value="outstanding_researcher">
+                  OYU Elmi tədqiqatçı diplomu mükafatı (4 bal)
                 </option>
                 <option value="oyu_excellence">
                   OYU “İşində fərqliliyə görə” təltifi (5 bal)

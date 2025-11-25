@@ -44,8 +44,8 @@ const STEPS = [
   "Akademik və idarəetmə vəzifələri", //13
   "Sənətşünaslıq fəaliyyəti", //14
   "Sənətşünaslıq mükafatı", //15
-  "Açıq Suallar ", //16
-  "Sertifikatlar", //17
+  "Sertifikatlar",
+  "Açıq Suallar ", //17
   "Yekun", //18
 ];
 
@@ -74,7 +74,8 @@ const STEP_FIELDS: Record<number, string[]> = {
   13: ["academicPositions"],
   14: ["artsActivities"],
   15: ["artsAwards"],
-  16: [], // açıq sualları məcburi etmirsənsə boş qala bilər
+  16: ["certificates"],
+  17: [], // açıq sualları məcburi etmirsənsə boş qala bilər
 };
 
 export default function HomePage() {
@@ -226,8 +227,8 @@ export default function HomePage() {
         {currentStep === 13 && <AcademicPositionsStep form={form} />}
         {currentStep === 14 && <ArtsActivityStep form={form} />}
         {currentStep === 15 && <ArtsAwardsStep form={form} />}
-        {currentStep === 16 && <OpenQuestionsStep form={form} />}
-        {currentStep === 17 && <CertificatesStep form={form} />}
+        {currentStep === 16 && <CertificatesStep form={form} />}
+        {currentStep === 17 && <OpenQuestionsStep form={form} />}
 
 
         {currentStep === STEPS.length - 1 && (

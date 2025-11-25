@@ -50,6 +50,8 @@ export function ConferencesStep({ form }: Props) {
           return 6;
         case "ORG_COMMITTEE": // Təşkilat komitəsi (sədri/müavini/üzvü)
           return 10; // 10/7/4-dən 10 götürmüşük
+        case "ORG_COMMITTEE_MEM": // Təşkilat komitəsi (sədri/müavini/üzvü)
+          return 7; // 10/7/4-dən 10 götürmüşük
         case "PARTICIPANT": // İştirakçı (məruzəsiz)
           return 3;
         case "MODERATOR":
@@ -171,7 +173,10 @@ export function ConferencesStep({ form }: Props) {
                 <option value="SECTION_CHAIR">Bölmə sədri</option>
                 <option value="SPEAKER">Məruzəçi</option>
                 <option value="ORG_COMMITTEE">
-                  Təşkilat komitəsi (sədri/müavini/üzvü)
+                  Təşkilat komitəsi (sədri/müavini)
+                </option>
+                <option value="ORG_COMMITTEE_MEM">
+                  Təşkilat komitəsi (üzvü)
                 </option>
                 <option value="PARTICIPANT">İştirakçı (məruzəsiz)</option>
                 <option value="MODERATOR">Moderator</option>

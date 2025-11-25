@@ -3,6 +3,61 @@
 import { useFieldArray, UseFormReturn } from "react-hook-form";
 import { ApqmFormValues, CertificateCategory } from "./types";
 
+const CERTIFICATE_LIST: Record<string, string[]> = {
+  it: [
+    "CompTIA A+",
+    "Cisco CCNA",
+    "AWS Cloud Practitioner",
+  ],
+  english: [
+    "IELTS",
+    "TOEFL iBT",
+    "Cambridge C1 Advanced (CAE)",
+    "Duolingo English Test",
+    "TESOL",
+  ],
+  economics: [
+    "Certified Business Economist (CBE)",
+    "Economics for Managers (Harvard Online)",
+    "Economic Development Certificate (CEcD)",
+  ],
+  business: [
+    "Project Management Professional (PMP)",
+    "Certified Business Manager (CBM)",
+    "Mini-MBA",
+  ],
+  management: [
+    "PMP",
+    "PRINCE2 Practitioner",
+    "Certified Manager (CM)",
+  ],
+  biology: [
+    "ASCP Biologist Certification",
+    "Biotechnology Certificate (MIT/Harvard)",
+    "Molecular Biology Techniques Certificate",
+  ],
+  ecology: [
+    "Certified Ecologist (ESA)",
+    "Environmental Management Certificate",
+    "Environmental Impact Assessment (EIA)",
+  ],
+  finance: [
+    "CFA",
+    "CPA",
+    "ACCA",
+  ],
+  marketing: [
+    "Google Digital Marketing & E-Commerce",
+    "HubSpot Inbound Marketing",
+    "Meta Digital Marketing Associate",
+  ],
+  design: [
+    "Adobe Certified Professional (ACP)",
+    "Google UX Design Certificate",
+    "Graphic Design Specialization – CalArts",
+  ],
+};
+
 interface Props {
   form: UseFormReturn<ApqmFormValues>;
 }
@@ -22,114 +77,106 @@ export function CertificatesStep({ form }: Props) {
       id: crypto.randomUUID(),
       field: "it",
       title: "",
-      category: "top" as CertificateCategory,
+      category: "top",
       year: new Date().getFullYear(),
-      points: 0,
+      points: 10, // default
     });
   };
 
-  const calcPoints = (category: CertificateCategory) => {
-    switch (category) {
-      case "top":
-        return 10; // PMP, CFA, CCNA, IELTS...
-      case "medium":
-        return 7;  // TOEFL, Google UX, HubSpot...
-      case "basic":
-        return 4;  // Duolingo, Mini-MBA...
-      default:
-        return 0;
-    }
-  };
-
-  const recalc = (index: number) => {
-    const category = certificates[index]?.category as CertificateCategory;
-    setValue(`certificates.${index}.points`, calcPoints(category));
+  // 🔥 Hər seçimdə balı 10 edirik
+  const setFixedPoints = (index: number) => {
+    setValue(`certificates.${index}.points`, 10);
   };
 
   return (
     <div className="space-y-4">
       <h2 className="text-lg font-semibold">Sertifikatlar</h2>
 
-      {fields.map((field, index) => (
-        <div
-          key={field.id}
-          className="border p-4 bg-slate-50 rounded-lg space-y-4"
-        >
-          {/* Sahə seçimi */}
-          <div className="flex flex-col">
-            <label className="text-sm">Sahə</label>
-            <select
-              {...register(`certificates.${index}.field` as const)}
-              className="border p-2 rounded"
-            >
-              <option value="it">Information Technology</option>
-              <option value="english">English Language</option>
-              <option value="economics">Economics</option>
-              <option value="business">Business</option>
-              <option value="management">Management</option>
-              <option value="biology">Biology</option>
-              <option value="ecology">Ecology</option>
-              <option value="finance">Finance</option>
-              <option value="marketing">Marketing</option>
-              <option value="design">Graphic Design / UX</option>
-            </select>
-          </div>
+      {fields.map((field, index) => {
+        const fieldKey = certificates[index]?.field || "it";
+        const options = CERTIFICATE_LIST[fieldKey] || [];
 
-          {/* Sertifikatın adı */}
-          <div className="flex flex-col">
-            <label className="text-sm">Sertifikatın adı</label>
-            <input
-              {...register(`certificates.${index}.title`)}
-              className="border p-2 rounded"
-              placeholder="Sertifikatın tam adı"
-            />
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {/* Kateqoriya */}
+        return (
+          <div
+            key={field.id}
+            className="border p-4 bg-slate-50 rounded-lg space-y-4"
+          >
+            {/* Sahə seçimi */}
             <div className="flex flex-col">
-              <label className="text-sm">Kateqoriya</label>
+              <label className="text-sm">Sahə</label>
               <select
-                {...register(`certificates.${index}.category` as const)}
+                {...register(`certificates.${index}.field` as const)}
                 className="border p-2 rounded"
-                onChange={() => recalc(index)}
+                onChange={(e) => {
+                  setValue(`certificates.${index}.field`, e.target.value);
+                  setValue(`certificates.${index}.title`, "");
+                  setFixedPoints(index);
+                }}
               >
-                <option value="top">Top (PMP, CFA, CCNA, IELTS…)</option>
-                <option value="medium">Orta (TOEFL, Google UX…)</option>
-                <option value="basic">Əsas (Duolingo, Mini-MBA…)</option>
+                <option value="it">Information Technology</option>
+                <option value="english">English Language</option>
+                <option value="economics">Economics</option>
+                <option value="business">Business</option>
+                <option value="management">Management</option>
+                <option value="biology">Biology</option>
+                <option value="ecology">Ecology</option>
+                <option value="finance">Finance</option>
+                <option value="marketing">Marketing</option>
+                <option value="design">Graphic Design / UX</option>
               </select>
             </div>
 
-            {/* İl */}
+            {/* Sertifikatın adı */}
             <div className="flex flex-col">
-              <label className="text-sm">İl</label>
-              <input
-                type="number"
-                {...register(`certificates.${index}.year`, {
-                  valueAsNumber: true,
-                })}
+              <label className="text-sm">Sertifikatın adı</label>
+              <select
+                {...register(`certificates.${index}.title` as const)}
                 className="border p-2 rounded"
-              />
+                onChange={() => setFixedPoints(index)}
+              >
+                <option value="">Seçin...</option>
+                {options.map((t) => (
+                  <option key={t} value={t}>
+                    {t}
+                  </option>
+                ))}
+              </select>
             </div>
-          </div>
 
-          {/* Puan */}
-          <div className="text-sm">
-            Bal:{" "}
-            <span className="font-semibold">
-              {certificates[index]?.points ?? 0}
-            </span>
-          </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* İl */}
+              <div className="flex flex-col">
+                <label className="text-sm">İl</label>
+                <input
+                  type="number"
+                  {...register(`certificates.${index}.year`, {
+                    valueAsNumber: true,
+                  })}
+                  className="border p-2 rounded"
+                />
+              </div>
 
-          <button
-            type="button"
-            onClick={() => remove(index)}
-            className="text-red-600 text-sm"
-          >
-            Sil
-          </button>
-        </div>
-      ))}
+              {/* Bal */}
+              <div className="flex flex-col justify-end">
+                <p className="text-sm">
+                  Bal:{" "}
+                  <span className="font-semibold">
+                    {certificates[index]?.points ?? 0}
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => remove(index)}
+              className="text-red-600 text-sm"
+            >
+              Sil
+            </button>
+          </div>
+        );
+      })}
 
       <button
         type="button"

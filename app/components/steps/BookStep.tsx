@@ -101,17 +101,17 @@ export default function BookStep({
             </div>
 
             <div className="flex flex-col">
-              <label className="text-sm">Nəşriyyat</label>
+              <label className="text-sm">Nəşriyyat linki</label>
               <input
                 {...register(`books.${index}.publisher`)}
                 className="border p-2 rounded"
-                placeholder="Nəşriyyatın adı"
+                placeholder="Nəşriyyatın linki"
               />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div className="flex flex-col">
-                <label className="text-sm">Kateqoriya</label>
+                <label className="text-sm">Nəşriyyatın adı</label>
                 <select
                   {...register(`books.${index}.category` as const)}
                   className="border p-2 rounded"

@@ -65,6 +65,9 @@ export function PublicationSupportStep({
       case "reviewer_textbook":
         // Dərslik üçün 5, proqram üçün 2 idi – ortanı 5 kimi götürürük
         return 5;
+      case "reviewer_program":
+        // Dərslik üçün 5, proqram üçün 2 idi – ortanı 5 kimi götürürük
+        return 4;
       case "reviewer_oyu_journal":
         return 2;
       case "reviewer_phd":
@@ -231,7 +234,7 @@ export function PublicationSupportStep({
                 className="border p-2 rounded"
                 placeholder="Jurnal, kitab və ya dissertasiya"
               />
-            </div>
+            </div> 
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="flex flex-col">
@@ -267,7 +270,10 @@ export function PublicationSupportStep({
                     Yerli nəşriyyatda rəyçi (3 bal)
                   </option>
                   <option value="reviewer_textbook">
-                    Tədris vəsaiti / proqramına rəyçi (5 bal)
+                    Tədris vəsaitinə rəyçi (5 bal)
+                  </option>
+                  <option value="reviewer_program">
+                    Fənn proqramına rəyçi (4 bal)
                   </option>
                   <option value="reviewer_oyu_journal">
                     OYU “Elmi və Pedaqoji xəbərlər” jurnalında rəyçi (2 bal)

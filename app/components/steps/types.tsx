@@ -50,6 +50,7 @@ export type ConferenceRole =
   | "SECTION_CHAIR"  // Bölmə sədri
   | "SPEAKER"        // Məruzəçi
   | "ORG_COMMITTEE"  // Təşkilat komitəsi
+  | "ORG_COMMITTEE_MEM"  // Təşkilat komitəsi
   | "PARTICIPANT"    // İştirakçı
   | "MODERATOR";     // Moderator
 
@@ -104,6 +105,7 @@ export type EditorialType =
   | "reviewer_other_international"
   | "reviewer_local"
   | "reviewer_textbook"
+  | "reviewer_program"
   | "reviewer_oyu_journal"
   | "reviewer_phd";
 
