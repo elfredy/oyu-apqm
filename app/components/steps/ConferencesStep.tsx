@@ -41,13 +41,13 @@ export function ConferencesStep({ form }: Props) {
     if (scope === "WOS_SCOPUS") {
       switch (role) {
         case "CHAIR": // Sədr / həmsədr
-          return 15;
+          return 20;
         case "KEYNOTE": // Əsas məruzəçi
-          return 10;
+          return 15;
         case "SECTION_CHAIR": // Bölmə sədri
           return 6;
         case "SPEAKER": // Məruzəçi
-          return 6;
+          return 5;
         case "ORG_COMMITTEE": // Təşkilat komitəsi (sədri/müavini/üzvü)
           return 10; // 10/7/4-dən 10 götürmüşük
         case "ORG_COMMITTEE_MEM": // Təşkilat komitəsi (sədri/müavini/üzvü)
@@ -76,9 +76,9 @@ export function ConferencesStep({ form }: Props) {
 
         // Sədr / əsas məruzəçi / bölmə sədri üçün də 8/5/3 pattern verək
         case "CHAIR":
-          return 8;
+          return 15;
         case "KEYNOTE":
-          return 5;
+          return 12;
         case "SECTION_CHAIR":
           return 3;
         default:

@@ -33,13 +33,13 @@ export function ArtsActivityStep({
   const calcPoints = (cat: ArtsActivityCategory) => {
     switch (cat) {
       case "INTL_SOLO":
-        return 10;
+        return 20;
       case "INTL_GROUP":
-        return 8;
+        return 16;
       case "LOCAL_SOLO":
-        return 5;
+        return 19;
       case "LOCAL_GROUP":
-        return 3;
+        return 6;
       default:
         return 0;
     }
@@ -92,16 +92,16 @@ export function ArtsActivityStep({
                 className="border p-2 rounded"
               >
                 <option value="INTL_SOLO">
-                  Beynəlxalq fərdi sərgi (10)
+                  Beynəlxalq fərdi sərgi (20)
                 </option>
                 <option value="INTL_GROUP">
-                  Beynəlxalq qarışıq sərgi (8)
+                  Beynəlxalq qarışıq sərgi (16)
                 </option>
                 <option value="LOCAL_SOLO">
-                  Yerli fərdi sərgi (5)
+                  Yerli fərdi sərgi (10)
                 </option>
                 <option value="LOCAL_GROUP">
-                  Yerli qarışıq sərgi (3)
+                  Yerli qarışıq sərgi (6)
                 </option>
               </select>
             </div>

@@ -163,25 +163,21 @@ export default function HomePage() {
   };
 
   const onSubmit = async (values: ApqmFormValues) => {
-    // Yekun steplə bağlı əlavə təhlükəsizlik:
-    if (!confirmChecked) {
-      alert("Zəhmət olmasa məlumatların doğruluğunu təsdiqləyin.");
-      return;
-    }
-
+    console.log("SUBMIT START", values); // 🔍
     setIsSubmitting(true);
     try {
-      await addDoc(collection(db, "apqmSubmissions"), {
+      const res = await addDoc(collection(db, "apqmSubmissions"), {
         ...values,
         totalArticlePoints,
         totalBookPoints,
         grandTotalPoints: grandTotal,
         createdAt: serverTimestamp(),
       });
+      console.log("FIRESTORE OK, DOC ID:", res.id);
       setSubmitDone(true);
     } catch (error) {
-      console.error("Submit error:", error);
-      alert("Yükləmədə problem oldu, sonra yenidən yoxlayın.");
+      console.error("Submit error FIREBASE ===>", error);
+      alert("Yükləmədə problem oldu, console-a baxaq.");
     } finally {
       setIsSubmitting(false);
     }
@@ -233,8 +229,8 @@ export default function HomePage() {
 
         {currentStep === STEPS.length - 1 && (
           <div className="space-y-4">
-            <h2 className="text-5xl my-10 font-semibold text-center">
-              Yekun
+            <h2 className="text-6xl my-10 font-semibold text-center">
+              Diqqət
             </h2>
 
             <div className="flex items-start gap-3 p-4 rounded-lg bg-slate-50 border">
@@ -252,7 +248,7 @@ export default function HomePage() {
               </button>
               <p className="text-sm text-slate-800">
                 Əlavə etdiyim məlumatların doğruluğunu təsdiq edirəm və
-                yanlış məlumat verdiyim halda məsuliyyət daşıdığımı
+                yanlış məlumat verdiyim halda məsuliyyət daşıdığımı və balımın sıfırlanacağını 
                 qəbul edirəm.
               </p>
             </div>

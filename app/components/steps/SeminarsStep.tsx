@@ -36,9 +36,9 @@ export function SeminarsStep({
       case "moderator":               // Moderator
         return 3;
       case "oyu_internal_speaker":    // OYU elmi-metodiki seminar – məruzəçi
-        return 3;
+        return 8;
       case "oyu_internal_participant":// OYU elmi-metodiki seminar – iştirakçı
-        return 1;
+        return 2;
       default:
         return 0;
     }
@@ -57,7 +57,7 @@ export function SeminarsStep({
   return (
     <div className="space-y-4">
       <h2 className="text-lg font-semibold">
-        V. Seminar / dəyirmi masa / sosial xidmət
+        V. Seminar 
       </h2>
 
       {fields.map((field, index) => (
@@ -70,7 +70,7 @@ export function SeminarsStep({
             <input
               {...register(`seminars.${index}.title` as const)}
               className="border p-2 rounded"
-              placeholder="Seminar / panel / sosial fəaliyyət"
+              placeholder="Seminar "
             />
           </div>
 
@@ -91,7 +91,7 @@ export function SeminarsStep({
                 <option value="participant">İştirakçı (məruzəsiz)</option>
                 <option value="moderator">Moderator</option>
                 <option value="oyu_internal_speaker">
-                  OYU elmi-metodiki seminar – məruzəçi
+                OYU kafedralarda davamlı elmi seminar – məruzəçi
                 </option>
                 <option value="oyu_internal_participant">
                   OYU elmi-metodiki seminar – iştirakçı

@@ -44,6 +44,8 @@ export function DissertationsStep({
         return 10;
       case "MASTER_SUPERVISION":
         return 2;
+      case "PHD_STUDENT":
+        return 5;
       default:
         return 0;
     }
@@ -109,6 +111,9 @@ export function DissertationsStep({
                 </option>
                 <option value="MASTER_SUPERVISION">
                   Cari ildə tamamlanmış magistr işinə rəhbərlik (2)
+                </option>
+                <option value="PHD_STUDENT">
+                  PHD təhsil alan (5)
                 </option>
               </select>
             </div>

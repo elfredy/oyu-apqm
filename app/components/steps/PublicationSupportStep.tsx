@@ -51,13 +51,13 @@ export function PublicationSupportStep({
   const calcEditorialPoints = (type: EditorialType): number => {
     switch (type) {
       case "editor_wos_scopus":
-        return 8;
+        return 15;
       case "editor_other_international":
         return 6;
       case "editor_local":
         return 4;
       case "reviewer_wos_scopus":
-        return 7;
+        return 5;
       case "reviewer_other_international":
         return 4;
       case "reviewer_local":
@@ -72,6 +72,10 @@ export function PublicationSupportStep({
         return 2;
       case "reviewer_phd":
         return 3;
+      case "reviewer_master":
+        return 2;
+      case "reviewer_bachalor":
+        return 2;
       default:
         return 0;
     }
@@ -252,7 +256,7 @@ export function PublicationSupportStep({
                   }
                 >
                   <option value="editor_wos_scopus">
-                    WoS/Scopus jurnalda redaktorluq (8 bal)
+                    WoS/Scopus jurnalda redaktorluq (15 bal)
                   </option>
                   <option value="editor_other_international">
                     Digər beynəlxalq nəşrdə redaktorluq (6 bal)
@@ -261,7 +265,7 @@ export function PublicationSupportStep({
                     Yerli nəşrdə redaktorluq (4 bal)
                   </option>
                   <option value="reviewer_wos_scopus">
-                    WoS/Scopus jurnalda rəyçi (7 bal)
+                    WoS/Scopus jurnalda rəyçi (5 bal)
                   </option>
                   <option value="reviewer_other_international">
                     Digər beynəlxalq nəşrdə rəyçi (4 bal)
@@ -280,6 +284,12 @@ export function PublicationSupportStep({
                   </option>
                   <option value="reviewer_phd">
                     PhD dissertasiyasına rəyçi (3 bal)
+                  </option>
+                  <option value="reviewer_phd">
+                    Magistr dissertasiyasına rəyçi (2 bal)
+                  </option>
+                  <option value="reviewer_phd">
+                    Bakalavr dissertasiyasına rəyçi (2 bal)
                   </option>
                 </select>
               </div>

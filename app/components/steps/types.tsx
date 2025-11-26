@@ -107,7 +107,9 @@ export type EditorialType =
   | "reviewer_textbook"
   | "reviewer_program"
   | "reviewer_oyu_journal"
-  | "reviewer_phd";
+  | "reviewer_phd"
+  | "reviewer_master"
+  | "reviewer_bachalor";
 
 export interface EditorialReviewEntry {
   id: string;
@@ -204,7 +206,8 @@ export type DissertationCategory =
   | "DEFENDED_DOCTORAL"         // Elmlər doktoru müdafiə (20)
   | "ACADEMIC_TITLE_DOCENT"     // Dosent elmi adı (8)
   | "ACADEMIC_TITLE_PROFESSOR"  // Professor elmi adı (10)
-  | "MASTER_SUPERVISION";       // Magistr rəhbərlik (2);
+  | "MASTER_SUPERVISION"      // Magistr rəhbərlik (2);
+  | "PHD_STUDENT";       // Magistr rəhbərlik (2);
 
 export interface DissertationEntry {
   id: string;
@@ -281,7 +284,8 @@ export type AcademicPositionCategory =
   | "CHAIR_HEAD"         // 8
   | "RESEARCH_CENTER_HEAD" // 8
   | "COORDINATOR"        // 5
-  | "DEPARTMENT_HEAD";   // 6
+  | "DEPARTMENT_HEAD"   // 6
+  | "STRUCT_HEAD";   // 6
 
 export interface AcademicPositionEntry {
   id: string;

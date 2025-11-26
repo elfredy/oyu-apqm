@@ -134,7 +134,7 @@ export default function BookStep({
                     D – Beynəlxalq kitab fəsli (10 bal)
                   </option>
                   <option value="D_CHAPTER_LOCAL">
-                    D – Yerli kitab fəsli (5 bal)
+                    D – Oyu Elmi şuradan keçmiş  (5 bal)
                   </option>
                 </select>
               </div>

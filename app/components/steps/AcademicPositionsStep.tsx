@@ -44,6 +44,8 @@ export function AcademicPositionsStep({
         return 5;
       case "DEPARTMENT_HEAD":
         return 6;
+      case "STRUCT_HEAD":
+        return 6;
       default:
         return 0;
     }
@@ -98,6 +100,9 @@ export function AcademicPositionsStep({
                 <option value="COORDINATOR">Koordinator (5)</option>
                 <option value="DEPARTMENT_HEAD">
                   Departament rəhbəri (6)
+                </option>
+                <option value="DEPARTMENT_HEAD">
+                  Struktur bölmə rəhbəri (6)
                 </option>
               </select>
             </div>
