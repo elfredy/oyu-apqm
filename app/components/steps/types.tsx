@@ -340,6 +340,13 @@ export interface CertificateEntry {
   points: number;
 }
 
+
+export interface OpenQuestions {
+  satisfaction: string;        // Akademik performansdan məmnunsunuzmu?
+  biggestAchievement: string;  // Cari ildə ən böyük nailiyyətiniz
+  nextYearPriorities: string;    // Gələn il üçün prioritetlər
+}
+
 // ApqmFormValues içində əlavə et:
 export interface ApqmFormValues {
   personalInfo: PersonalInfo;
@@ -362,6 +369,8 @@ export interface ApqmFormValues {
   artsAwards: ArtsAwardEntry[];
   openResponses: OpenResponses;
   certificates: CertificateEntry[];
+  openQuestions: OpenQuestions;   // 🔥 BURANI ƏLAVƏ EDİRİK
+
 
 }
 
