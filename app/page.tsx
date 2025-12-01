@@ -288,6 +288,8 @@ export default function HomePage() {
 
       <p className="text-lg  text-center text-slate-600 mb-8">
         Hər akademik ilin sonunda akademik heyət tərəfindən doldurulur.
+        <br />
+        Formanı doldurduqdan sonra "Yadda saxla" düyməsinə basmağı unutmayın!
       </p>
 
       <Stepper
