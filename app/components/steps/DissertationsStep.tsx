@@ -33,7 +33,7 @@ export function DissertationsStep({
   const calcPoints = (cat: DissertationCategory) => {
     switch (cat) {
       case "PHD_SUPERVISION":
-        return 10;
+        return 7;
       case "DEFENDED_PHD":
         return 10;
       case "DEFENDED_DOCTORAL":
@@ -95,7 +95,7 @@ export function DissertationsStep({
                 className="border p-2 rounded"
               >
                 <option value="PHD_SUPERVISION">
-                  Cari ildə tamamlanmış PhD dissertasiyasına rəhbərlik (10)
+                  Cari ildə tamamlanmış PhD dissertasiyasına rəhbərlik (7)
                 </option>
                 <option value="DEFENDED_PHD">
                   Cari ildə PhD dissertasiyasını müdafiə edib (10)
@@ -110,7 +110,7 @@ export function DissertationsStep({
                   Cari ildə professor elmi ünvanı alıb (10)
                 </option>
                 <option value="MASTER_SUPERVISION">
-                  Cari ildə tamamlanmış magistr işinə rəhbərlik (2)
+                  Cari ildə tamamlanmış magistr işinə rəhbərlik (2) (max 10 bal)
                 </option>
                 <option value="PHD_STUDENT">
                   PHD təhsil alan (5)

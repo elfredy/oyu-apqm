@@ -68,7 +68,7 @@ export function ConferencesStep({ form }: Props) {
           // 8/5/3 – maksimumu götürək
           return 8;
         case "SPEAKER": // Məruzəçi
-          return 3;
+          return 4;
         case "PARTICIPANT": // İştirakçı (məruzəsiz)
           return 3;
         case "MODERATOR": // Moderator
@@ -76,11 +76,15 @@ export function ConferencesStep({ form }: Props) {
 
         // Sədr / əsas məruzəçi / bölmə sədri üçün də 8/5/3 pattern verək
         case "CHAIR":
-          return 15;
-        case "KEYNOTE":
           return 12;
+        case "KEYNOTE":
+          return 8;
         case "SECTION_CHAIR":
-          return 3;
+          return 4;
+        case "SPEAKER":
+          return 4;
+          case "ORG_COMMITTEE_MEM": // Təşkilat komitəsi (sədri/müavini/üzvü)
+          return 4;
         default:
           return 0;
       }
@@ -111,7 +115,7 @@ export function ConferencesStep({ form }: Props) {
   return (
     <div className="space-y-4">
       <h2 className="text-lg font-semibold mb-2">
-        IV. Konfrans / Kongres / Simpozium
+        IV. Konfrans / Kongres / Simpozium / Təşkiletmə (Yalnız 1 vəzifə üzrə bal hesablanacaq)
       </h2>
 
       {fields.map((field, index) => (
@@ -173,13 +177,12 @@ export function ConferencesStep({ form }: Props) {
                 <option value="SECTION_CHAIR">Bölmə sədri</option>
                 <option value="SPEAKER">Məruzəçi</option>
                 <option value="ORG_COMMITTEE">
-                  Təşkilat komitəsi (sədri/müavini)
+                  Təşkilat komitəsinin sədr müavini
                 </option>
                 <option value="ORG_COMMITTEE_MEM">
                   Təşkilat komitəsi (üzvü)
                 </option>
-                <option value="PARTICIPANT">İştirakçı (məruzəsiz)</option>
-                <option value="MODERATOR">Moderator</option>
+       
               </select>
             </div>
           </div>

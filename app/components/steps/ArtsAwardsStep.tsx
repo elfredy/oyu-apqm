@@ -35,7 +35,7 @@ export function ArtsAwardsStep({
   return (
     <div className="space-y-4">
       <h2 className="text-lg font-semibold">
-        XIX. Sənətşünaslıq mükafatı
+        XVI. Sənətşünaslıq mükafatı
       </h2>
 
       {fields.map((field, index) => (

@@ -46,7 +46,7 @@ export function JuryStep({
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-semibold">XI. Jüri</h2>
+      <h2 className="text-lg font-semibold">XI. Jüri  (Maksimum 10 bal)</h2>
 
       {fields.map((field, index) => (
         <div

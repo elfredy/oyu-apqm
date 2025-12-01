@@ -60,7 +60,7 @@ export function AcademicBodiesStep({
   return (
     <div className="space-y-4">
       <h2 className="text-lg font-semibold">
-        X. Elmi/ixtisas yönlü qurumlar, elmi şura və təşkilatlar
+        X. Elmi/ixtisas yönlü qurumlar, elmi şura və təşkilatlar 
       </h2>
 
       {fields.map((field, index) => (

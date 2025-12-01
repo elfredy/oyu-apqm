@@ -36,7 +36,7 @@ export function SeminarsStep({
       case "moderator":               // Moderator
         return 3;
       case "oyu_internal_speaker":    // OYU elmi-metodiki seminar – məruzəçi
-        return 8;
+        return 6;
       case "oyu_internal_participant":// OYU elmi-metodiki seminar – iştirakçı
         return 2;
       default:
@@ -87,12 +87,13 @@ export function SeminarsStep({
                 })}
                 className="border p-2 rounded"
               >
-                <option value="speaker">Məruzəçi</option>
-                <option value="participant">İştirakçı (məruzəsiz)</option>
-                <option value="moderator">Moderator</option>
+                <option value="speaker">  OYU elmi-metodiki seminar məruzəçi</option>
                 <option value="oyu_internal_speaker">
                 OYU kafedralarda davamlı elmi seminar – məruzəçi
                 </option>
+                <option value="participant"> OYU elmi-metodiki seminar İştirakçı (məruzəsiz)</option>
+                
+               
                 <option value="oyu_internal_participant">
                   OYU elmi-metodiki seminar – iştirakçı
                 </option>

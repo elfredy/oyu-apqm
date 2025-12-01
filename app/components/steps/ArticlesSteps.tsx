@@ -17,13 +17,13 @@ const getArticleBasePoints = (category: ArticleCategory): number => {
     case "C_WOS_ESCI":
       return 15;
     case "D_WOS_CPCI_FULL":
-      return 15;
+      return 12;
     case "D_WOS_CPCI_ABSTRACT":
       return 5;
     case "E_OTHER_INDEXED":
       return 7;
     case "F_AAK_JOURNAL":
-      return 5;
+      return 4;
     default:
       return 0;
   }
@@ -80,7 +80,7 @@ export function ArticlesStep({ form }: Props) {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-semibold mb-2">II. Məqalələr</h2>
+      <h2 className="text-lg font-semibold mb-2">III. Məqalələr</h2>
 
       {fields.length === 0 && (
         <p className="text-sm text-slate-600">
@@ -133,7 +133,7 @@ export function ArticlesStep({ form }: Props) {
                   C — WoS ESCI (15 bal)
                 </option>
                 <option value="D_WOS_CPCI_FULL">
-                  D — WoS CPCI tam mətn (15 bal)
+                  D — WoS CPCI, Scopus Indexli konfrans tam mətn (12 bal)
                 </option>
                 <option value="D_WOS_CPCI_ABSTRACT">
                   D — WoS CPCI xülasə (5 bal)
@@ -142,7 +142,7 @@ export function ArticlesStep({ form }: Props) {
                   E — Digər indeksli jurnallar (7 bal)
                 </option>
                 <option value="F_AAK_JOURNAL">
-                  F — AAK tərəfindən qəbul edilən jurnal (5 bal)
+                  F — AAK tərəfindən qəbul edilən jurnal (4 bal)
                 </option>
               </select>
             </div>

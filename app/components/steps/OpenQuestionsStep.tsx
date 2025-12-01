@@ -12,7 +12,7 @@ export function OpenQuestionsStep({
 
   return (
     <div className="space-y-6">
-      <h2 className="text-lg font-semibold">XX. Açıq suallar</h2>
+      <h2 className="text-lg font-semibold">XVIII. Açıq suallar</h2>
 
       <div className="flex flex-col space-y-2">
         <label className="text-sm">

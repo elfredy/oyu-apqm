@@ -49,11 +49,12 @@ const STEPS = [
   "Mükafatlar", // 7  (VIII)
   "Dissertasiyalar", // 8  (IX)
   "Elmi şuralar və təşkilatlar", // 9  (X)
-  "Jüri", //10  (XI)
+   "Jüri",//10  (XI)
   "Patent / yeni məhsul", //11  (XII)
   "OYU-nu təmsil etmə", //12  (XIII)
   "Akademik və idarəetmə vəzifələri", //13 (XIV)
-  "Sənətşünaslıq fəaliyyəti", //14  (XVII)
+  "Sənətşünaslıq fəaliyyəti",
+   //14  (XVII)
   "Sənətşünaslıq mükafatı", //15  (XIX)
   "Sertifikatlar", //16  (extra step)
   "Açıq suallar", //17  (XX)
@@ -285,7 +286,7 @@ export default function HomePage() {
         </h1>
       </div>
 
-      <p className="text-md text-center text-slate-600 mb-6">
+      <p className="text-lg  text-center text-slate-600 mb-8">
         Hər akademik ilin sonunda akademik heyət tərəfindən doldurulur.
       </p>
 
@@ -322,8 +323,8 @@ export default function HomePage() {
 
         {currentStep === STEPS.length - 1 && (
           <div className="space-y-6">
-            <h2 className="text-2xl my-4 font-semibold text-center">
-              Yekun
+            <h2 className="text-5xl my-4  text-red-600 font-semibold text-center">
+              Diqqət !!!
             </h2>
 
             <div className="flex items-start gap-3 p-4 border rounded-lg bg-slate-50">
@@ -336,11 +337,11 @@ export default function HomePage() {
               />
               <label
                 htmlFor="confirm"
-                className="text-sm text-slate-800 leading-snug"
+                className="text-lg text-slate-800 leading-snug"
               >
-                Formda təqdim etdiyim bütün məlumatların doğru və aktual
+                Formada təqdim etdiyim bütün məlumatların doğru və aktual
                 olduğunu təsdiq edirəm. Yalan və ya yanlış məlumat verdiyim
-                təqdirdə məsuliyyəti üzərimə götürürəm.
+                təqdirdə məsuliyyət daşıyacağıma və nəticələrimin sıfırlanacağını təsdiq edirəm
               </label>
             </div>
 
@@ -350,10 +351,12 @@ export default function HomePage() {
               </p>
             )}
 
-            <p className="text-md text-red-600">
-              <span className="font-semibold">Qeyd:</span> Xahiş olunur formu
+            <p className="text-lg text-red-600">
+              <span className="font-semibold">Qeyd:</span> Xahiş olunur formanı
               göndərməzdən əvvəl əlavə etdiyiniz məlumatları bir daha
-              yoxlayasınız.
+              yoxlayasınız, "Göndər" seçildikdən sonra formadakı məlumatlarda dəyişiklik etmək mümkün deyil. 
+              <br /> <br />
+             <span className="text-xl">  Əgər cavablarınızdan əminsinizsə  "Göndər" düyməsinə basın</span>
             </p>
           </div>
         )}

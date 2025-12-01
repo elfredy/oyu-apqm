@@ -59,7 +59,7 @@ export function AcademicPositionsStep({
   return (
     <div className="space-y-4">
       <h2 className="text-lg font-semibold">
-        XIV. Akademik və idarəetmə vəzifələri
+        XIV. Akademik və idarəetmə vəzifələri 
       </h2>
 
       {fields.map((field, index) => (

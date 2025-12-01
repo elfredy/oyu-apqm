@@ -14,7 +14,7 @@ export function Stepper({
   errorSteps = [],
 }: StepperProps) {
   return (
-    <div className="w-full overflow-x-auto pb-3 mb-6 border-b">
+    <div className="w-full overflow-x-auto  pb-3 mt-10 mb-6 border-b">
       <div className="flex items-center gap-6 min-w-max px-2">
         {steps.map((label, index) => {
           const isActive = index === currentStep;
@@ -44,7 +44,7 @@ export function Stepper({
               {/* NÖMRƏ BADGE */}
               <span
                 className={`
-                  flex items-center justify-center rounded-full w-10 h-10 text-sm font-semibold mb-1
+                  flex items-center justify-center rounded-full w-12 h-12 text-md font-semibold mb-1
                   transition-all
                   ${
                     hasError
@@ -61,7 +61,7 @@ export function Stepper({
               </span>
 
               {/* STEP TITLE */}
-              <span className="text-md max-w-[250px] mt-5 mb-5 text-center leading-tight">
+              <span className="text-lg max-w-[250px] mt-5 mb-5 text-center leading-tight">
                 {label}
               </span>
 

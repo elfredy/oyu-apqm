@@ -7,7 +7,10 @@ export type BookCategory =
   | "B_WOS_SCOPUS_BOOK_SERIES" // 15 bal
   | "C_HIGH_RATED_LOCAL" // 5 bal
   | "D_CHAPTER_INTL" // 10 bal
-  | "D_CHAPTER_LOCAL"; // 5 bal;
+  | "D_CHAPTER_LOCAL" // 5 bal;
+  | "E_TEXTBOOK" // 5 bal;
+  | "F_COURSE_P" // 5 bal;
+
 
   export type ArticleQuartile = "Q1" | "Q2" | "Q3" | "Q4";
 

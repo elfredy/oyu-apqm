@@ -53,9 +53,9 @@ export function PublicationSupportStep({
       case "editor_wos_scopus":
         return 15;
       case "editor_other_international":
-        return 6;
+        return 7;
       case "editor_local":
-        return 4;
+        return 5;
       case "reviewer_wos_scopus":
         return 5;
       case "reviewer_other_international":
@@ -67,13 +67,13 @@ export function PublicationSupportStep({
         return 5;
       case "reviewer_program":
         // Dərslik üçün 5, proqram üçün 2 idi – ortanı 5 kimi götürürük
-        return 4;
+        return 2;
       case "reviewer_oyu_journal":
-        return 2;
-      case "reviewer_phd":
         return 3;
+      case "reviewer_phd":
+        return 5;
       case "reviewer_master":
-        return 2;
+        return 3;
       case "reviewer_bachalor":
         return 2;
       default:
@@ -259,10 +259,10 @@ export function PublicationSupportStep({
                     WoS/Scopus jurnalda redaktorluq (15 bal)
                   </option>
                   <option value="editor_other_international">
-                    Digər beynəlxalq nəşrdə redaktorluq (6 bal)
+                    Digər beynəlxalq nəşrdə redaktorluq (7 bal)
                   </option>
                   <option value="editor_local">
-                    Yerli nəşrdə redaktorluq (4 bal)
+                    Yerli nəşrdə redaktorluq (5 bal)
                   </option>
                   <option value="reviewer_wos_scopus">
                     WoS/Scopus jurnalda rəyçi (5 bal)
@@ -277,19 +277,19 @@ export function PublicationSupportStep({
                     Tədris vəsaitinə rəyçi (5 bal)
                   </option>
                   <option value="reviewer_program">
-                    Fənn proqramına rəyçi (4 bal)
+                    Fənn proqramına rəyçi (2 bal)
                   </option>
                   <option value="reviewer_oyu_journal">
-                    OYU “Elmi və Pedaqoji xəbərlər” jurnalında rəyçi (2 bal)
+                    OYU “Elmi və Pedaqoji xəbərlər” jurnalında rəyçi (3 bal)
                   </option>
                   <option value="reviewer_phd">
-                    PhD dissertasiyasına rəyçi (3 bal)
+                   OYU - da PhD dissertasiyasına rəyçi (5 bal)
                   </option>
-                  <option value="reviewer_phd">
-                    Magistr dissertasiyasına rəyçi (2 bal)
+                  <option value="reviewer_master">
+                    Magistr dissertasiyasına rəyçi (3 bal)
                   </option>
-                  <option value="reviewer_phd">
-                    Bakalavr dissertasiyasına rəyçi (2 bal)
+                  <option value="reviewer_master">
+                    Bakalavr dissertasiyasına rəyçi (3 bal)
                   </option>
                 </select>
               </div>

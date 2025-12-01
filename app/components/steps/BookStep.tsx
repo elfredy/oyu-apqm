@@ -29,6 +29,12 @@ export default function BookStep({
         return 10;
       case "D_CHAPTER_LOCAL":
         return 5;
+      case "E_TEXTBOOK":
+        return 7;
+      case "D_CHAPTER_LOCAL":
+        return 5;
+      case "F_COURSE_P":
+        return 4;
       default:
         return 0;
     }
@@ -81,7 +87,7 @@ export default function BookStep({
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-semibold mb-2">I. Kitablar</h2>
+      <h2 className="text-lg font-semibold mb-2">II. Kitablar</h2>
 
       {fields.map((field, index) => {
         const bookPoints = books[index]?.points ?? 0;
@@ -135,6 +141,15 @@ export default function BookStep({
                   </option>
                   <option value="D_CHAPTER_LOCAL">
                     D – Oyu Elmi şuradan keçmiş  (5 bal)
+                  </option>
+                  <option value="E_TEXTBOOK">
+                    E – Dərslik (7 bal)
+                  </option>
+                  <option value="D_CHAPTER_LOCAL">
+                    F – Dərs vəsaiti, Monoqrafiya  (5 bal)
+                  </option>
+                  <option value="F_COURSE_P">
+                    E – Fənn programı  (4 bal)
                   </option>
                 </select>
               </div>

@@ -90,7 +90,7 @@ export function CertificatesStep({ form }: Props) {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-semibold">Sertifikatlar</h2>
+      <h2 className="text-lg font-semibold">XVII. Sertifikatlar</h2>
 
       {fields.map((field, index) => {
         const fieldKey = certificates[index]?.field || "it";

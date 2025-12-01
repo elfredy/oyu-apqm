@@ -53,7 +53,7 @@ export function ArtsActivityStep({
   return (
     <div className="space-y-4">
       <h2 className="text-lg font-semibold">
-        XVII. Sənətşünaslıq fəaliyyəti
+        XV. Sənətşünaslıq fəaliyyəti
       </h2>
 
       {fields.map((field, index) => (

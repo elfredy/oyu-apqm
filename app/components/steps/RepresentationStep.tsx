@@ -31,13 +31,13 @@ export function RepresentationStep({
   };
 
   const calcPoints = (scope: RepresentationScope) =>
-    scope === "INTERNATIONAL" ? 10 : 5;
+    scope === "INTERNATIONAL" ? 5 : 3;
 
   const total = reps.reduce((s, r) => s + (r?.points || 0), 0);
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-semibold">XIII. OYU-nu təmsil etmə</h2>
+      <h2 className="text-lg font-semibold">XIII. OYU-nu təmsil etmə (Maksimum 10 bal)</h2>
 
       {fields.map((field, index) => (
         <div
@@ -80,10 +80,10 @@ export function RepresentationStep({
                 className="border p-2 rounded"
               >
                 <option value="INTERNATIONAL">
-                  Beynəlxalq təmsilçilik (10)
+                  Beynəlxalq təmsilçilik (5)
                 </option>
                 <option value="LOCAL">
-                  Yerli təmsilçilik (5)
+                  Yerli təmsilçilik (3)
                 </option>
               </select>
             </div>
